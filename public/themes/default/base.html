@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{block name="title"}{if $title}{$title}{/if}{:app\\common\\Title::get()}{/block}</title>
+
+
+{:helper_link([
+ 
+
+theme_url().'css.css',
+
+])}
+
+{:widgets('Bootstrap')}
+{:widgets('AjaxForm')}
+
+
+  
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="{:app\\common\\Seo::get('keywords')} " />
+<meta name="description" content="{:app\\common\\Seo::get('description')}" />
+
+{:app\\common\\Hook::listen('header')}
+
+</head>
+<body >
+
+ 
+ 
+   		
+		 
+  		 
+		{include file="header" /} 
+		<div class="container">
+    			{block name="content"}{/block}
+		</div>
+
+		<div class="container">
+ 		{include file="footer"}
+ 		</div>
+ 
+
+
+{block name="footer"}{/block}
+
+
+{:helper_link([
+base_url().'misc/jquery.js',
+theme_url().'js/js.js',
+
+])}
+
+
+{:output()}
+
+{:app\\common\\Hook::listen('footer')}
+
+
+<div style="display:none">
+
+
+
+</div>
+ </body>
+</html>

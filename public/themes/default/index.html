@@ -1,0 +1,26 @@
+{extend name="base" /}
+{block name="content"}
+
+
+
+<form role="form" method="post" class='ajax_form'>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">输入分享内容：</label>
+    <textarea class="form-control" id='content' name='content'>  </textarea> 
+    <p><div class='error error_content'></div></p>
+  </div>
+   
+  <button type="submit" class="btn btn-default">生成链接</button>
+</form>
+
+
+<div class="alert alert-warning font-small">
+	
+生成的链接仅可访问一次哦！！！
+
+</div>
+
+{:widgets('Redactor',['ele'=>'#content'])}
+
+{/block}
